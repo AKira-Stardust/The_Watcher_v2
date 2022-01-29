@@ -1,0 +1,8 @@
+const dramaList = [
+    {
+        title: "Hometown Cha Cha Cha",
+        stars: 5,
+        year: 2021,
+        episodes: 16,
+        status: 2
+    },

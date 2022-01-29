@@ -1,0 +1,38 @@
+<html lang="en">
+<%- include("../partials/header.ejs") %>
+
+<body class="bg-light-off text-gray-700 font-body font-semibold">
+
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="p-14">       
+        <div class="create-drama">
+            <form action="/all/updateDrama/<%= drama._id %>" method="POST" enctype="multipart/form-data">
+                <label class="text-lg pb-2">Update Existing..</label>
+                <label for="title">Drama Title</label>
+                <input type="text" name="title" id="title" value="<%= drama.title %>" required>
+                <label for="stars">Drama Review</label>
+                <input type="text" name="stars" id="stars" value="<%= drama.stars %>" required>
+                <label for="year">Drama Year</label>
+                <input type="text" name="year" id="year" value="<%= drama.year %>" required>
+                <label for="episodes">Drama Episodes</label>
+                <input type="text" name="episodes" id="episodes" value="<%= drama.episodes %>" required>
+                <label for="status">Select Drama Status</label>
+                <select id="status" name="status">
+                    <option value="" selected disabled hidden><%= drama.status %></option>
+                    <option value="watched">Watched</option>
+                    <option value="watching">Watching</option>
+                    <option value="toWatch">To Watch</option>
+                  </select>
+                <label for="uploaded_image">Upload Drama Cover</label>
+                <input type="file" name="uploaded_image" value="<%= drama.image %>"> 
+                <label for="synopsis">Drama Synopsis</label>
+                <input type="text" name="synopsis" id="synopsis" value="<%= drama.synopsis %>"> 
+                <button>Update</button>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>

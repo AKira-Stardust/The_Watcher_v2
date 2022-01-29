@@ -1,0 +1,29 @@
+{
+  "name": "the_watcher",
+  "version": "1.0.0",
+  "description": "One place to track all your shows",
+  "engines": {
+    "node": "14.16.0"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js -e ejs,js,css",
+    "build-css": "tailwindcss build -i styles/tailwindcss.css -o public/styles.css"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "AK",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.2",
+    "multer": "^1.4.4",
+    "sharp": "^0.29.3",
+    "tailwindcss": "^3.0.2"
+  }
+}

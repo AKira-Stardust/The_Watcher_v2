@@ -1,0 +1,13 @@
+<script>
+    
+    const navContainer = document.querySelector(".nav_container");
+    const navLists = navContainer.querySelectorAll(".nav-list");
+
+    navLists.forEach( navListItem => {
+        let navText = navListItem.innerHTML.toLowerCase();
+        if( document.URL.match(navText) ){
+            navListItem.classList.add("nav-active");
+        }
+    });
+
+</script>

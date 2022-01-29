@@ -1,0 +1,29 @@
+<html lang="en">
+<%- include("../partials/header.ejs") %>
+
+<body class="bg-light-off text-gray-700 font-body font-semibold">
+
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="p-10">
+
+        <div class="flex justify-between items-center">
+            <div>
+                <span>Total Dramas to Watch: </span>   
+                <span class="font-semibold text-2xl text-red-700"><%= dramaList.length %></span>
+            </div>
+            <!-- Search Bar -->
+            <%- include("../partials/searchBar.ejs") %> 
+        </div> 
+
+        <!-- Card Deck -->
+        <%- include("../partials/cardDeck.ejs") %>
+    </div>
+    <!-- Footer -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- NavScript -->
+    <%- include("../partials/NavScript.ejs") %>
+
+</body>
+</html>

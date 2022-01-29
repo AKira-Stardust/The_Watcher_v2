@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-list {
+    @apply pl-8 pr-8 text-lg
+}
+
+.card {
+    @apply bg-white rounded overflow-hidden shadow-md relative;
+}
+
+.badge {
+    @apply text-xs uppercase font-bold rounded-full p-2 absolute top-0 mr-2 mt-2;
+}
+
+/* create styles */
+.create-drama form{
+    @apply p-24 pt-7 mt-0 mb-0 ml-auto mr-auto max-w-3xl bg-dark-lighternavy 
+    rounded-lg
+    /* max-width: 400px;
+    margin: 0 auto; */
+  }
+
+.create-drama input{
+    @apply block w-full mt-2 mb-5 p-2
+    rounded-md text-black font-semibold
+    /* display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px; */
+}
+
+.create-drama select{
+    @apply block w-full mt-2 mb-5 p-2
+    rounded-md text-black font-semibold
+    /* display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px; */
+}
+
+.create-drama label{
+    @apply block mt-10 text-light-ivory 
+}
+
+
+.create-drama button{
+    @apply mt-14 p-3 pl-5 pr-5 rounded-full font-bold text-sm cursor-pointer bg-light-ivory text-dark-navy
+}
+
+.del_text:hover {
+    @apply font-extrabold text-red-700
+}
+
+.upd_text:hover {
+    @apply font-extrabold text-red-700
+}
+
+.nav-list:hover {
+    @apply font-extrabold text-red-700 text-lg
+}
+
+.nav-active {
+    @apply font-extrabold text-red-700 text-lg mb-4 border-b-2 border-red-700
+}

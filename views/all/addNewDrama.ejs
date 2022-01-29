@@ -1,0 +1,38 @@
+<html lang="en">
+<%- include("../partials/header.ejs") %>
+
+<body class="bg-light-off text-gray-700 font-body font-semibold">
+
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="p-14">       
+        <div class="create-drama">
+            <form action="/all" method="POST" enctype="multipart/form-data">
+                <label class="text-lg pb-2">Add a New Drama..</label>
+                <label for="title">Drama Title</label>
+                <input type="text" name="title" id="title" required>
+                <label for="stars">Drama Review</label>
+                <input type="text" name="stars" id="stars" required>
+                <label for="year">Drama Year</label>
+                <input type="text" name="year" id="year" required>
+                <label for="episodes">Drama Episodes</label>
+                <input type="text" name="episodes" id="episodes" required>
+                <label for="status">Select Drama Status</label>
+                <select id="status" name="status">
+                    <option value="Watched">Watched</option>
+                    <option value="Watching">Watching</option>
+                    <option value="To Watch">To Watch</option>
+                </select>
+                <label for="uploaded_image">Upload Drama Cover</label>
+                <input type="file" name="uploaded_image">
+                <label for="synopsis">Drama Synopsis</label>
+                <input type="text" name="synopsis" id="synopsis">     
+                <button>Submit</button>                
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <%- include("../partials/footer.ejs") %>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+
+<body class="bg-light-off text-gray-700 font-body font-semibold">
+
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="p-14">
+        <div class="bg-dark-lighternavy md:grid md:grid-cols-5 md:gap-3 rounded-lg">
+            <div class="md:col-span-3 rounded-lg">                
+                <img src="/all/image/<%= drama.id %>" class="w-full h-full object-fill rounded-lg" alt="details_pic" >
+            </div>
+            <div class="md:col-span-2 p-9">              
+                <div class="mt-7">
+                    <span class="text-sm text-gray-400">Title: </span>
+                    <span class="text-lg font-bold text-red-700"><%= drama.title %></span>
+                </div>
+                <div>
+                    <span class="text-sm text-gray-400">Status: </span>
+                    <span class="text-light-off"><%= drama.status %></span>
+                </div>
+                <div>
+                    <span class="text-sm text-gray-400">Year of Release: </span>
+                    <span class="text-light-off"><%= drama.year %></span>
+                </div>
+                <div>
+                    <span class="text-sm text-gray-400">Total Episodes: </span>
+                    <span class="text-light-off"><%= drama.episodes %></span>
+                </div>
+                <div>
+                    <span class="text-sm text-gray-400">Rating: </span>
+                    <span class="text-light-off"><%= drama.stars %></span>
+                </div>
+                <div class="mt-7 text-lg text-light-off">
+                    <!-- <%= drama.snippet %> -->
+                    This happened.. so the male lead did this.. and met the female lead.. then that happened..
+                    so then they went there and met them.. them were not good.. but they changed them.. and now there is all good.
+                </div> 
+                <!-- START - Delete and Edit buttons -->
+                <div class="p-8 flex justify-center items-center absolute">
+                    <div class="delete_button">
+                        <a href="#" data-doc="<%= drama._id %>" class="delete_drama flex items-center">
+                            <span class="material-icons" style="color:white">delete</span>
+                            <span class="pl-2 font-semibold text-red-800 text-sm del_text">DELETE</span>
+                        </a>                
+                    </div>
+                    <div class="pl-8 font-semibold text-red-800 text-sm">|</div>
+                    <div  class="flex pl-8 items-center update_button">
+                        <a href="/all/updateDrama/<%= drama._id %>" class="update_Drama flex items-center">
+                            <span class="material-icons" style="color:white">update</span>
+                            <span class="pl-2 font-semibold text-red-800 text-sm upd_text">UPDATE</span>
+                        </a>
+                    </div> 
+                </div>
+                <!-- END - Delete and Edit buttons -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <%- include("./partials/footer.ejs") %>
+
+    <script>
+        const trash = document.querySelector('a.delete_drama');
+        trash.addEventListener('click', (e) => {
+            const endPoint = `/details/${trash.dataset.doc}`;
+            fetch(endPoint, {
+                method: "DELETE"
+            })
+            .then( (res) => {
+                res.json()
+                .then( (data) => {
+                    window.location.href = (data.redirect);
+                })
+                .else( (err) =>{
+                    console.log("Trouble with json to data conversion.. " + err);
+                })
+            })
+            .catch( (err) =>{
+                console.log("Error in deleting record.. " + err);
+            });
+        });
+    </script>
+
+</body>
+</html>
