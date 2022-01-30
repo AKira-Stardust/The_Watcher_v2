@@ -68,14 +68,13 @@ const all_update_get = (req, res) => {
 const all_update_post = async (req, res) => {
     const id = req.params.id;
 
-    let buffer = null;
-    if (req.file){
-        buffer = await sharp(req.file.buffer).resize({width: 1000, height:700}).png().toBuffer();
-    }
+    // if (req.file){
+    //     buffer = await sharp(req.file.buffer).resize({width: 1000, height:700}).png().toBuffer();
+    // }
      
     const drama = {
-        ...req.body,
-        image: buffer
+        ...req.body
+        // image: buffer
     };
 
     Drama.findByIdAndUpdate(id, drama)

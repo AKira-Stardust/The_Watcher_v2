@@ -24,10 +24,10 @@
                     <option value="watching">Watching</option>
                     <option value="toWatch">To Watch</option>
                   </select>
-                <label for="uploaded_image">Upload Drama Cover</label>
-                <input type="file" name="uploaded_image" value="<%= drama.image %>"> 
+                <!-- <label for="uploaded_image">Upload Drama Cover</label>
+                <input type="file" name="uploaded_image" value="<%= drama.image %>">  -->
                 <label for="synopsis">Drama Synopsis</label>
-                <input type="text" name="synopsis" id="synopsis" value="<%= drama.synopsis %>"> 
+                <textarea rows="4" name="synopsis" id="synopsis"><%= drama.synopsis %></textarea>>
                 <button>Update</button>
             </form>
         </div>
