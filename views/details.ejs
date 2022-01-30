@@ -8,36 +8,34 @@
     <div class="p-14">
         <div class="bg-dark-lighternavy md:grid md:grid-cols-5 md:gap-3 rounded-lg">
             <div class="md:col-span-3 rounded-lg">                
-                <img src="/all/image/<%= drama.id %>" class="w-full h-full object-fill rounded-lg" alt="details_pic" >
+                <img src="/all/image/<%= drama.id %>" class="md:w-full md:h-full object-fill rounded-lg" alt="details_pic" >
             </div>
-            <div class="md:col-span-2 p-9">              
-                <div class="mt-7">
-                    <span class="text-sm text-gray-400">Title: </span>
-                    <span class="text-lg font-bold text-red-700"><%= drama.title %></span>
-                </div>
+            <div class="md:col-span-2 p-9">         
                 <div>
-                    <span class="text-sm text-gray-400">Status: </span>
-                    <span class="text-light-off"><%= drama.status %></span>
-                </div>
-                <div>
-                    <span class="text-sm text-gray-400">Year of Release: </span>
-                    <span class="text-light-off"><%= drama.year %></span>
-                </div>
-                <div>
-                    <span class="text-sm text-gray-400">Total Episodes: </span>
-                    <span class="text-light-off"><%= drama.episodes %></span>
-                </div>
-                <div>
-                    <span class="text-sm text-gray-400">Rating: </span>
-                    <span class="text-light-off"><%= drama.stars %></span>
-                </div>
-                <div class="mt-7 text-lg text-light-off">
-                    <%= drama.synopsis %>
-                    <!-- This happened.. so the male lead did this.. and met the female lead.. then that happened..
-                    so then they went there and met them.. them were not good.. but they changed them.. and now there is all good. -->
-                </div> 
+                    <div class="mt-7">
+                        <span class="text-sm text-gray-400">Title: </span>
+                        <span class="text-lg font-bold text-red-700"><%= drama.title %></span>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Status: </span>
+                        <span class="text-light-off"><%= drama.status %></span>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Year of Release: </span>
+                        <span class="text-light-off"><%= drama.year %></span>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Total Episodes: </span>
+                        <span class="text-light-off"><%= drama.episodes %></span>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Rating: </span>
+                        <span class="text-light-off"><%= drama.stars %></span>
+                    </div>
+                    <div class="mt-7 text-lg text-light-off"><%= drama.synopsis %></div> 
+                </div>                     
                 <!-- START - Delete and Edit buttons -->
-                <div class="p-8 flex justify-center items-center absolute">
+                <div class="p-8 flex justify-center items-center">
                     <div class="delete_button">
                         <a href="#" data-doc="<%= drama._id %>" class="delete_drama flex items-center">
                             <span class="material-icons" style="color:white">delete</span>

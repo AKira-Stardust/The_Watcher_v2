@@ -7,16 +7,16 @@
 
     <div class="p-14">       
         <div class="create-drama">
-            <form action="/all/updateDrama/<%= drama._id %>" method="POST" enctype="multipart/form-data">
+            <form action="/all/updateDrama/<%= drama._id %>" method="POST" enctype="multipart/form-data"  autocomplete="off">
                 <label class="text-lg pb-2">Update Existing..</label>
                 <label for="title">Drama Title</label>
                 <input type="text" name="title" id="title" value="<%= drama.title %>" required>
                 <label for="stars">Drama Review</label>
-                <input type="text" name="stars" id="stars" value="<%= drama.stars %>" required>
+                <input type="number" min="1" max="5" name="stars" id="stars" value="<%= drama.stars %>" required>
                 <label for="year">Drama Year</label>
-                <input type="text" name="year" id="year" value="<%= drama.year %>" required>
+                <input type="number" min="1970" max="2022" name="year" id="year" value="<%= drama.year %>" required>
                 <label for="episodes">Drama Episodes</label>
-                <input type="text" name="episodes" id="episodes" value="<%= drama.episodes %>" required>
+                <input type="number" min="1" name="episodes" id="episodes" value="<%= drama.episodes %>" required>
                 <label for="status">Select Drama Status</label>
                 <select id="status" name="status">
                     <option value="" selected disabled hidden><%= drama.status %></option>

@@ -1,5 +1,6 @@
 const Drama = require('../models/drama');
 const sharp = require("sharp");
+const path = require("path");
 
 //drama_details
 //watched_index
@@ -94,7 +95,10 @@ const all_image = async (req, res) => {
     if(!drama) {
         console.log("Oops, error finding that Drama! " + err);
     }
-    else{
+    else if(drama.image == null) {
+        res.sendFile(path.join( __dirname, '../public/images', 'default_image.jpg'));
+    }
+    else {
         res.set("Content-Type", "image/png");
         res.send(drama.image);
     }    

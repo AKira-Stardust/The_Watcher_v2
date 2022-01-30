@@ -71,5 +71,9 @@
 }
 
 .nav-active {
-    @apply font-extrabold text-red-700 text-lg mb-4 border-b-2 border-red-700
+    @apply font-extrabold text-red-700 text-lg mb-4 border-l-2 md:border-l-0 md:border-b-2 border-red-700
+}
+
+.watcher_head {
+    @apply pt-8 pl-6 md:pt-0 md:pl-0
 }
